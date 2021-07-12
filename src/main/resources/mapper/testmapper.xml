@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--test-->
+
+<!--namespace는 클래스의 패키지와 비슷한 용도로 Mybatis에서 원하는 SQL문을 찾아서 실행할 때 동작-->
+<mapper namespace="com.blackshirts.threeblackshirts.repository.UserRep">
+    <!--UserRep(DAO인터페이스)에서 작성한 메소드명과 일치시킨다!-->
+    <insert id="insertUser" parameterType="com.blackshirts.threeblackshirts.data.User">
+        INSERT INTO USER(useremail, userpassword)
+        VALUES(#{useremail}, #{userpassword}); <!--User(도메인클래스)의 변수-->
+    </insert>
+    <select id="selectUserInfo" parameterType="com.blackshirts.threeblackshirts.data.User" resultType="com.blackshirts.threeblackshirts.data.User">
+        SELECT *
+        FROM user;
+    </select>
+    <select id="selectUserInfoByUseremail" parameterType="String" resultType="com.blackshirts.threeblackshirts.data.User">
+        SELECT *
+        FROM user
+        WHERE useremail=#{useremail}
+    </select>
+</mapper>

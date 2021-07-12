@@ -1,0 +1,25 @@
+html, body
+{
+    background-color: lightblue;
+    height: 100%;
+}
+
+body
+{
+    display: table;
+    margin: 0 auto;
+}
+
+.container
+{
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.main
+{
+    text-align: center;
+    width: 300px;
+    height: 200px;
+}

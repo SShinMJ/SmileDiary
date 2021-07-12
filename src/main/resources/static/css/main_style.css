@@ -1,0 +1,85 @@
+/*@font-face {*/
+/*    font-family: '';*/
+/*    src: url('');*/
+/*    src: url('');*/
+/*}*/
+
+html, body
+{
+    background-color: lightblue;
+    height: 100%;
+}
+
+body
+{
+    display: table;
+    margin: 0 auto;
+}
+
+.container
+{
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.main
+{
+    text-align: center;
+    width: 300px;
+    height: 200px;
+}
+
+.title, #title
+{
+    width: 300px;
+    height: 80px;
+}
+
+.login
+{
+    margin-top: 20px;
+    width: 300px;
+    height: 80px;
+}
+
+.input{
+    width: 220px;
+    height: 80px;
+    float: left;
+}
+
+#useremail, #userpassword
+{
+    margin-left: 5px;
+    width: 210px;
+    height: 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+#login
+{
+    font-weight: bold;
+    margin-right: 5px;
+    width: 60px;
+    height: 70px;
+    border: none;
+    border-radius: 10px;
+    background: cornsilk;
+    float: right;
+}
+
+.hyperLink
+{
+    float: left;
+    margin-left: 10px;
+}
+
+#sign_up, #find_user
+{
+    font-weight: bold;
+    border: none;
+    background: transparent;
+}
