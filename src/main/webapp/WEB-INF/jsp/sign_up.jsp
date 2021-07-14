@@ -13,12 +13,30 @@
         crossorigin="anonymous"></script>
 <script>
     function checkemail(str)    {
+        var success = 'false';
         var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-        if(reg_email.test(str))
-            //if(기존에 있는 이메일인지 확인)
-            return true;
+        if(reg_email.test(str)) {
+            $.ajax({
+                url : "/user",
+                type:"POST",
+                contentType: "application/json; charset-utf-8",
+                data : JSON.stringify({ useremail: str}),
+                success:function(data){
+                    if(data) {
+                        success = 'true';
+                    }
+                    else {
+                        alert("중복된 이메일입니다.");
+                    }
+                },
+                error: function (){
+                    alert("err");
+                }
+            })
+            return success;
+        }
         else
-            return false;
+            alert('잘못된 이메일 형식입니다.');
     }
     function checkpassword(str) {
         var reg_pwd = /^(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
@@ -29,7 +47,7 @@
     }
 
     function confirmpassword(str1, str2) {
-        if(str1 ==str2)
+        if(str1 == str2)
             return true;
         else
             return false;
@@ -41,15 +59,19 @@
             var userpassword = $('#userpassword').val();
             var repassword = $('#repassword').val();
             if(checkemail(useremail)) {   //이메일 형식 체크
+                console.log("email")
                 if(checkpassword(userpassword)) { //비밀번호 형식 체크
+                    console.log("pwd")
                     if(confirmpassword(userpassword, repassword)) {
+                        console.log(useremail + "\t" + userpassword);
                         $.ajax({
                             url : "/insert",
-                            type:"GET",
-                            data : {useremail, userpassword},
+                            type:"POST",
+                            contentType: "application/json; charset-utf-8",
+                            data : JSON.stringify({useremail: useremail, userpassword: userpassword}),   //json으로 보내기 > db이름과 일치시키는 것
                             success:function(){
                                 alert("회원가입이 완료됐습니다.^^");
-                                location.href = "/"
+                                location.href = "/sign_in";
                             },
                             error: function (){
                                 alert("err");
@@ -62,8 +84,6 @@
                 else
                     alert('비밀번호는 8자 이상이어야 하며, 숫자/소문자를 포함해야 합니다.');
             }
-            else
-                alert('잘못된 이메일 형식입니다.');
         })
     })
 </script>

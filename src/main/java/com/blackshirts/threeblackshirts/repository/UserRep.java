@@ -12,5 +12,5 @@ public interface UserRep {
     //insertUser를 호출할 때 ~Mapper.xml에서 User 객체를 호출한다.
     // == #{useremail},#{userpassword} 등을 사용할 수 있다.
     void insertUser(User user);
-    User selectUserInfo(String useremail);
+    User selectUserInfoByUseremail(String useremail);
 }
