@@ -82,10 +82,10 @@ public class MainController {
     @ResponseBody
     @PostMapping("/cookieinsert")
     public void cookieinsert(HttpServletResponse response){
-        log.info("COOKIE CHECK");
+        log.info("COOKIE INSERT");
         Cookie cookie =new Cookie("userCookie",null); 	//userCookie라는 이름의 쿠키 생성
         cookie.setComment("로그인 확인");		//해당 쿠키가 어떤 용도인지 커멘트
-        cookie.setMaxAge(60*60*24*365);			//해당 쿠키의 유효시간을 설정 (초 기준)
+        cookie.setMaxAge(60*60*24*365);		//해당 쿠키의 유효시간을 설정 (초 기준)
         cookie.setPath("/"); // 모든 경로에서 접근 가능 하도록 설정
         response.addCookie(cookie);
     }
@@ -93,17 +93,16 @@ public class MainController {
     @ResponseBody
     @PostMapping("/cookieCheck")
     public boolean cookieCheck(HttpServletRequest request){
+        log.info("COOKIE CHECK");
         String user = null;
         Cookie[] cookie = request.getCookies();
 
         for(Cookie c : cookie){
-            if(c.getName().equals("userCookie")) {
-                user = c.getValue();
-                System.out.println("쿠기 : " + user);
+            if(c.getName().equals("userCookie")) { //로그인시 저장된 쿠키 이름 = userCookie
+                user = c.getValue();               //따라서 userCookie라는 쿠키가 있는지 확인
             }
         }
         if(user == null){
-            System.out.println("쿠키가 없습니다.");
             return true;
         }
         else
@@ -113,7 +112,7 @@ public class MainController {
     @ResponseBody
     @PostMapping("/cookieDelete")
     public void cookieDelete(HttpServletResponse response) {
-        //원래 쿠키의 이름이 userInfo 이었다면, value를 null로 처리.
+        //원래 쿠키의 이름이 userCookie 이었다면, value를 null로 처리.
         Cookie cookie = new Cookie("userCookie", null);
         cookie.setMaxAge(0); // 쿠키의 expiration 타임을 0으로 하여 없앤다.
         cookie.setPath("/"); // 모든 경로에서 삭제 됬음을 알린다.

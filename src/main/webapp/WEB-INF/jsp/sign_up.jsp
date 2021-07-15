@@ -13,17 +13,19 @@
         crossorigin="anonymous"></script>
 <script>
     function checkemail(str)    {
-        var success = 'false';
+        var success = false;
         var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
         if(reg_email.test(str)) {
             $.ajax({
                 url : "/user",
                 type:"POST",
                 contentType: "application/json; charset-utf-8",
+                async: false,  //ajax는 기본적으로 비동기식. 다음과 같이 동기식으로 바꿔야
+                               //ajax가 처리된 후 success를 리턴하게된다.
                 data : JSON.stringify({ useremail: str}),
                 success:function(data){
                     if(data) {
-                        success = 'true';
+                        success = true;
                     }
                     else {
                         alert("중복된 이메일입니다.");
@@ -35,8 +37,10 @@
             })
             return success;
         }
-        else
+        else {
             alert('잘못된 이메일 형식입니다.');
+            return false;
+        }
     }
     function checkpassword(str) {
         var reg_pwd = /^(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
@@ -59,11 +63,10 @@
             var userpassword = $('#userpassword').val();
             var repassword = $('#repassword').val();
             if(checkemail(useremail)) {   //이메일 형식 체크
-                console.log("email")
+                console.log("email check");
                 if(checkpassword(userpassword)) { //비밀번호 형식 체크
-                    console.log("pwd")
+                    console.log("pwd check");
                     if(confirmpassword(userpassword, repassword)) {
-                        console.log(useremail + "\t" + userpassword);
                         $.ajax({
                             url : "/insert",
                             type:"POST",
@@ -78,8 +81,9 @@
                             }
                         })
                     }
-                    else
+                    else {
                         alert('비밀번호가 서로 다릅니다.');
+                    }
                 }
                 else
                     alert('비밀번호는 8자 이상이어야 하며, 숫자/소문자를 포함해야 합니다.');

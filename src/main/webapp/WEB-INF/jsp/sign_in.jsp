@@ -28,12 +28,25 @@
     }
 
     $(document).ready(function() {
+        $.ajax({
+            url: "/cookieCheck",
+            type: "POST",
+            contentType: "application/json; charset-utf-8",
+            success: function (data) {
+                if(!data) {
+                    alert("로그인이 되어있습니다.");
+                    location.href = "/diary_main";
+                }
+            },
+            error: function () {
+                alert("err");
+            }
+        })
         $('#login').click(function() {
             var useremail = $('#useremail').val();
             var userpassword = $('#userpassword').val();
             if(checkemail(useremail)) {   //이메일 형식 체크
                 if(checkpassword(userpassword)) { //비밀번호 형식 체크
-                    console.log(useremail + "\t" + userpassword);
                     $.ajax({
                         url : "/logincheck",
                         type:"POST",
