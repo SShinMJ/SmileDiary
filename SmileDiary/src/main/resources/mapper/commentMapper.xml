@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--test-->
+<mapper namespace="com.blackshirts.threeblackshirts.repository.BReplyRep">
+    <select id="cntReply" resultType="int">
+        SELECT COUNT(*)
+        FROM BReply
+    </select>
+    <select id="listBReply" resultType="com.blackshirts.threeblackshirts.data.BReply">
+        SELECT *
+        FROM BReply
+    </select>
+    <select id="cntBReplyByBoardId" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+        FROM BReply
+        WHERE board_id = #{board_id}
+    </select>
+    <select id="listBReplyByBoardId" parameterType="int" resultType="com.blackshirts.threeblackshirts.data.BReply">
+        SELECT *
+        FROM BReply
+        WHERE board_id = #{board_id}
+        ORDER BY reply_id desc
+    </select>
+    <insert id="insertBReply" parameterType="com.blackshirts.threeblackshirts.data.BReply">
+        INSERT INTO BReply (board_id, user_email, reply_content, reply_secret, reply_datetime)
+        VALUES (#{board_id}, #{user_email}, #{reply_content}, #{reply_secret}, now())
+    </insert>
+    <update id="updateBReply" parameterType="com.blackshirts.threeblackshirts.data.BReply">
+        UPDATE BReply
+        SET reply_content = #{reply_content},
+            reply_secret  = #{reply_secret}
+        WHERE reply_id = #{reply_id}
+    </update>
+    <delete id="deleteBReply" parameterType="int">
+        DELETE
+        FROM BReply
+        WHERE reply_id = #{reply_id}
+    </delete>
+    <select id="listCriteriaBReply" parameterType="hashmap" resultType="com.blackshirts.threeblackshirts.data.BReply"> <!-- typeAlias를 지정했음으로 풀 네임 기재 필요 없음 -->
+        <![CDATA[
+            select * from BReply where board_id = #{board_id} order by reply_id desc limit #{start_num}, #{record_per_page}
+        ]]>
+    </select>
+</mapper>

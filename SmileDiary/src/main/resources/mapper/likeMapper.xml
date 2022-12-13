@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--test-->
+<mapper namespace="com.blackshirts.threeblackshirts.repository.LikeRep">
+    <select id="cntBoardLike" parameterType="java.lang.Integer" resultType="int">
+        SELECT COUNT(*)
+        FROM BoardLike
+        WHERE board_id = #{board_id}
+    </select>
+    <insert id="updateBoardLike" parameterType="com.blackshirts.threeblackshirts.data.Like">
+        INSERT INTO BoardLike (board_id, user_email)
+        VALUES (#{board_id}, #{user_email})
+    </insert>
+    <delete id="deleteBoardLike" parameterType="com.blackshirts.threeblackshirts.data.Like">
+        DELETE FROM BoardLike
+        WHERE board_id = #{board_id} AND user_email = #{user_email}
+    </delete>
+    <!--동일 게시글 추천 여부-->
+    <select id="checkBoardLike" parameterType="com.blackshirts.threeblackshirts.data.Like" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM BoardLike
+        WHERE user_email = #{user_email} and board_id = #{board_id}
+    </select>
+</mapper>

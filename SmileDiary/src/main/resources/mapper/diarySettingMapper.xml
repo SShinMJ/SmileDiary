@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--test-->
+<mapper namespace="com.blackshirts.threeblackshirts.repository.DiarySettingRep">
+    <insert id="insertdefalt" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        INSERT INTO DIARYSETTING(user_nickname)
+        VALUES(#{user_nickname});
+    </insert>
+    <select id="selectByUserNickname" parameterType="String" resultType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        SELECT *
+        FROM diarysetting
+        WHERE user_nickname=#{user_nickname}
+    </select>
+    <update id="ctgDiaryTrue" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_diary=1, ctg_count=ctg_count+1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgPhotoTrue" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_photo=1, ctg_count=ctg_count+1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgCalendarTrue" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_calendar=1, ctg_count=ctg_count+1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgTodoTrue" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_todo=1, ctg_count=ctg_count+1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgGuestTrue" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_guest=1, ctg_count=ctg_count+1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgDiaryFalse" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_diary=0, ctg_count=ctg_count-1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgPhotoFalse" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_photo=0, ctg_count=ctg_count-1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgCalendarFalse" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_calendar=0, ctg_count=ctg_count-1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgTodoFalse" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_todo=0, ctg_count=ctg_count-1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="ctgGuestFalse" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET ctg_guest=0, ctg_count=ctg_count-1
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="themechange" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET theme_type=#{theme_type}, back_color=#{back_color}, cover_color=#{cover_color}, page_color=#{page_color}, bookmark_color=#{bookmark_color}
+        WHERE user_nickname=#{user_nickname}
+    </update>
+    <update id="fontchange" parameterType="com.blackshirts.threeblackshirts.data.DiarySetting">
+        UPDATE DIARYSETTING
+        SET font_type=#{font_type}
+        WHERE user_nickname=#{user_nickname}
+    </update>
+</mapper>

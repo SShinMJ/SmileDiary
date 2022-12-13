@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*강원교육모두체*/
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*교보손글씨*/
+    font-family: 'KyoboHandwriting2020A';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*코트라희망체*/
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*마루 부리*/
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body {
+    font-family: 'EliceDigitalBaeum_Bold', sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #c8dfe9;
+}
+
+#div_load_img {
+     position: absolute;
+     top: 50%; left: 50%;
+     width: 0px; height: 0px;
+     z-index: 9999;
+     background: #c8dfe9;
+     filter: alpha(opacity=50);
+     opacity: 0.7;
+     margin: auto;
+     padding: 0;
+     text-align: center;
+ }
+
+#container {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#main_header {
+    height: 70px; width: 100%;
+    border-radius: 10px;
+    vertical-align: middle;
+    display: table;
+}
+
+#main_header_title {
+    height: 100%; width: 80%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.wrap_btn {
+    display: table-cell;
+    width: 6%;
+    height: 80%;
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+    padding: 10px;
+    transform: scale(1);
+}
+
+.wrap_btn:hover {
+    border-radius: 10px;
+    color: #6C95C1;
+}
+
+#main {
+    width: 99%; height: 92%;
+    padding: 0;
+    margin: 0 19px;
+}
+
+
+#diary {
+    display: table;
+    background-color: #A4C6DE;
+    width: 99%; height: 98%;
+    margin: 0;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#blank {
+    display: table-cell;
+    width: 1.5%; height: 95%;
+}
+
+.page {
+    margin-top: 20px;
+    background-clip: content-box;
+    background-color: #eaebf1;
+}
+
+#both_page {
+    display: table-cell;
+    height: 95%;
+    border-radius: 5%;
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#title {
+    margin: 10px 0;
+    width: 90%;
+}
+
+#content {
+    margin: 10px 0;
+    width: 90%;
+}
+
+#post_title {
+    width: 500px;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    resize: none; /* 크기고정 */
+}
+
+#category {
+    display: table-cell;
+    width: 5%; height: 95%;
+}
+
+#category_title {
+    height: 10%; width: 90%;
+    vertical-align: middle;
+    margin: 0;
+}
+
+#category_item_container {
+    height: 85%; width: 100%;
+    vertical-align: middle;
+}
+
+
+.category_item {
+    height: 6%;
+    vertical-align: middle;
+    background-color: #c8dfe9;
+    background-clip: content-box;
+    text-align: left;
+    margin-top: 20px;
+    padding: 0px;
+    margin-right: 15px;
+    border-radius: 0px 8px 8px 0px;
+    transform: scale(1);
+}
+
+#toSetting{
+    position: relative;
+    top: 350px;
+}
+
+.category_item:hover {
+    background-color: #6C95C1;
+}
