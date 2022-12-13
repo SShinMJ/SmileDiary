@@ -1,0 +1,124 @@
+html, body {
+    background-color: #c8dfe9;
+    height: 100%;
+}
+
+body {
+    display: table;
+    margin: 0 auto;
+}
+
+.container {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.main {
+    text-align: center;
+    width: 600px;
+    height: 380px;
+}
+
+.background{
+    background-color: #a4c6de;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.contents{
+    background-color: white;
+    margin: 6%;
+    margin-right: 0px;
+    border-radius: 10px;
+    float: left;
+    width: 75%;
+    height: 80%;
+    text-align: center;
+}
+
+.find{
+    margin-top: 8%;
+    margin-left: 10%;
+    font-weight: bold;
+    width: 80%;
+    height: 80%;
+}
+
+.search_box{
+    height: 85px;
+    margin: 0px;
+    margin-top: 30px;
+}
+
+.input{
+    width:260px;
+    height: 100%;
+    float:left;
+}
+
+.user_nickname, .user_password, .user_email, #insert_code {
+    width: 240px;
+    height: 25px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.search{
+    margin-right: 15px;
+    width: 60px;
+    height: 70px;
+    border: none;
+    border-radius: 10px;
+    background: #6c91ac;
+    float: right;
+}
+
+.print{
+    margin-top: 40px;
+    font-weight: normal;
+    text-decoration: underline;
+    color: gray;
+}
+
+.category{
+    width: 13%;
+    height: 55%;
+    float: left;
+    margin-top: 10%;
+    margin-left: 0px;
+    text-align: center;
+    display: table-cell;
+}
+
+.category_item {
+    background-color: #6c91ac;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 30%; width: 100%;
+    text-align: left;
+    margin: 10px;
+    margin-left: 0px;
+    box-sizing: border-box;
+}
+
+#find_id_category, #find_pwd_category, #go_to_signin{
+    border: none;
+    font-weight: bold;
+    background: transparent;
+    margin-top: 15px; margin-bottom: 15px;
+    margin-left: 1px; margin-right: 3px;
+}
+
+#comfirm {
+    margin-right: 15px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background: #B3A4C1;
+    float: right;
+}

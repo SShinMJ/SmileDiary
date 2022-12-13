@@ -1,0 +1,349 @@
+.cnccolor1 {color: #f9f9f9;}
+.cnccolor2 {color: #dfecea;}
+.cnccolor3 {color: #708182;}
+.cnccolor4 {color: #545551;}
+.cnccolor5 {color: #171b1c;}
+
+.mjcolor1 {color: #F9DCDE;}
+.mjcolor2 {color: #F3C3D1;}
+.mjcolor3 {color: #B3A4C1;}
+.mjcolor4 {color: #5A6C94;}
+.mjcolor5 {color: #222F3F;}
+.mjcolor6 {color: #6C95C1;}
+
+.tcolor1 {color: #2677b6;}
+.tcolor2 {color: #879cd9;}
+.tcolor3 {color: #bcbfe5;}
+.tcolor4 {color: #e6dfed;}
+.tcolor5 {color: #f3f3f3;}
+
+.jinicolor1 {color: #fafbf9;}
+.jinicolor2 {color: #eaebf1;}
+.jinicolor3 {color: #dce5df;}
+.jinicolor4 {color: #c8dfe9;}
+.jinicolor5 {color: #a9c1b9;}
+.jinicolor6 {color: #8a91a3;}
+.jinicolor7 {color: #b7cad8;}
+
+@font-face {
+    /*엘리스 디지털 배움체*/
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*강원교육모두체*/
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*교보손글씨*/
+    font-family: 'KyoboHandwriting2020A';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*코트라희망체*/
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    /*마루 부리*/
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body {
+    font-family: 'EliceDigitalBaeum_Bold', sans-serif;
+    background-color: #c8dfe9;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#div_load_img {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0px; height: 0px;
+    z-index: 9999;
+    background: #c8dfe9;
+    filter: alpha(opacity=50);
+    opacity: 0.7;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#main_header {
+    height: 70px; width: 100%;
+    border-radius: 10px;
+    vertical-align: middle;
+    display: table;
+}
+
+#main_header_title {
+    height: 100%; width: 80%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.wrap_btn {
+    display: table-cell;
+    width: 6%;
+    height: 80%;
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+    padding: 10px;
+    transform: scale(1);
+}
+
+.wrap_btn:hover {
+    border-radius: 10px;
+    color: #6C95C1;
+}
+
+#main {
+    width: 99%; height: 92%;
+    padding: 0;
+    margin: 0 19px;
+}
+
+
+#diary {
+    display: table;
+    background-color: #A4C6DE;
+    width: 99%; height: 98%;
+    margin: 0;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#blank {
+    display: table-cell;
+    width: 1.5%; height: 95%;
+}
+
+.page {
+    margin-top: 20px;
+    background-clip: content-box;
+    background-color: #eaebf1;
+}
+
+#left_page {
+    display: table-cell;
+    width: 42%; height: 95%;
+    border-radius: 5% 1% 1% 5%;
+    padding: 10px;
+    padding-right: 3px;
+    padding-left: 0;
+    vertical-align: top;
+}
+
+#right_page {
+    display: table-cell;
+    width: 42%; height: 95%;
+    border-radius: 1% 5% 5% 1%;
+    padding: 10px;
+    padding-left: 3px;
+    padding-right: 0;
+    vertical-align: top;
+}
+
+#category {
+    display: table-cell;
+    width: 5%; height: 95%;
+}
+
+#category_title {
+    height: 10%; width: 90%;
+    vertical-align: middle;
+    margin: 0;
+}
+
+#category_item_container {
+    height: 85%; width: 100%;
+    vertical-align: middle;
+}
+
+
+.category_item {
+    height: 6%;
+    vertical-align: middle;
+    background-color: #c8dfe9;
+    background-clip: content-box;
+    text-align: left;
+    margin-top: 20px;
+    padding: 0px;
+    margin-right: 15px;
+    border-radius: 0px 8px 8px 0px;
+    transform: scale(1);
+}
+
+#toSetting{
+    position: relative;
+    top: 350px;
+}
+
+.category_item:hover {
+    background-color: #6C95C1;
+}
+
+.page_content {
+    height: 75%;
+    text-align: left;
+    margin: 5px;
+    padding: 5%;!important;
+    box-sizing: border-box;
+}
+
+.setting_content{
+    padding-bottom: 40px;
+}
+
+.setting_name {
+    text-align: left;
+    margin: 10px;
+    padding-top: 10px;
+    color: gray;
+    font-size: 1.5em;
+}
+
+#category_item_box {
+    margin-left: 10px;
+    padding: 0px;
+    align: left;
+}
+
+.category_btn{
+    font-size: medium;
+    width: 70px;
+    height: 30px;
+    font-weight: normal;
+    border: none;
+    border-radius: 5px;
+    background: #6b6b6b;
+    color: white;
+    margin: 5px;
+}
+
+#theme_type{
+    margin-left: 20px;
+    font-size: small;
+    color: gray;
+    font-size: 1em;
+}
+
+.theme_type{
+    margin-bottom: 15px;
+}
+
+.theme_type_custom{
+    margin-left: 30px;
+}
+
+.submit{
+    border: none;
+    border-radius: 5px;
+    background: gray;
+    color: white;
+}
+
+#custom_submit{
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+}
+
+.menu_box_content{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+#menu_font{
+    height: 55%;
+}
+
+#menu_font_contentbox{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#menu_font_content_present{
+    display: table;
+    width: 90%;
+    height: 20%;
+    margin: 0;
+    color: gray;
+}
+
+#menu_font_content_present h5{
+    display: inline-block;
+    width: 30%;
+}
+
+#menu_font_content_present span{
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+}
+#menu_font_content_present button{
+    width: 20%;
+    display: inline-block;
+}
+
+#present_font_btn{
+    font-size: medium;
+    width: 40px;
+    font-weight: normal;
+    border: none;
+    border-radius: 5px;
+    background: #6b6b6b;
+    color: white;
+}
+
+#menu_font_content_edit{
+    margin-top: 20px;
+    display: table;
+    width: 95%;
+    height: 20%;
+    text-align: right;
+}
+
+#font_select{
+    width: 70%;
+}
+
+#menu_font_content_edit label{
+    width: 50%;
+    text-align: center;
+}
+
+#menu_font_content_edit button{
+    width: 15%;
+    text-align: center;
+    padding: 3px 6px 3px 6px;
+    margin-right: 10px;
+}

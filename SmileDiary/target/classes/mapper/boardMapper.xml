@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--test-->
+<mapper namespace="com.blackshirts.threeblackshirts.repository.BoardRep">
+    <insert id="insertBoard" parameterType="com.blackshirts.threeblackshirts.data.Board">
+        INSERT INTO Board(user_email, board_title, board_content, board_datetime, board_file_name)
+        VALUES (#{user_email}, #{board_title}, #{board_content}, #{board_datetime}, #{board_file_name});
+    </insert>
+    <select id="selectBoard" parameterType="com.blackshirts.threeblackshirts.data.Board"
+            resultType="com.blackshirts.threeblackshirts.data.Board">
+        SELECT *
+        FROM Board;
+    </select>
+    <select id="selectBoardByUserEmail" parameterType="com.blackshirts.threeblackshirts.data.Board"
+            resultType="com.blackshirts.threeblackshirts.data.Board">
+        SELECT *
+        FROM Board
+        WHERE user_email = #{user_email}
+    </select>
+    <select id="selectBoardByBoardId" parameterType="java.lang.Integer"
+            resultType="com.blackshirts.threeblackshirts.data.Board">
+        SELECT *
+        FROM Board
+        WHERE board_id = #{board_id}
+    </select>
+    <update id="updateBoard" parameterType="com.blackshirts.threeblackshirts.data.Board">
+        UPDATE Board
+        SET board_title          = #{board_title},
+            board_content        = #{board_content},
+            board_update_datetime=#{board_update_datetime}
+        WHERE board_id = #{board_id}
+          and user_email = #{user_email}
+    </update>
+    <delete id="deleteBoard" parameterType="java.lang.Integer">
+        DELETE
+        FROM Board
+        WHERE board_id = #{board_id}
+    </delete>
+    <!-- 총 게시글 갯수 출력 -->
+    <select id="countBoard" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM Board
+    </select>
+    <select id="listCriteria" parameterType="com.blackshirts.threeblackshirts.data.Criteria"
+            resultType="com.blackshirts.threeblackshirts.data.Board"> <!-- typeAlias를 지정했음으로 풀 네임 기재 필요 없음 -->
+        <![CDATA[
+            select * from Board where board_id > 0 order by board_id desc limit #{startPage}, #{per_page_num}
+        ]]>
+    </select>
+</mapper>

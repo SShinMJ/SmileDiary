@@ -1,0 +1,42 @@
+html, body {
+    background-color: #A4C6DE;
+}
+
+body {
+    display: table;
+}
+
+.container {
+    width: 310px;
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.main {
+    text-align: center;
+    margin-top: 20px;
+    width: 310px;
+    height: 300px;
+}
+
+.input {
+    margin-top: 20px;
+}
+
+#change_password, #re_password {
+    height: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+#change_button {
+    font-weight: bold;
+    margin-top: 15px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background: cornsilk;
+}

@@ -1,0 +1,176 @@
+html, body {
+    background-color: #c8dfe9;
+    height: 100%;
+}
+
+body {
+    display: table;
+    margin: 0 auto;
+}
+
+.container {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.main {
+    text-align: center;
+    width: 600px;
+    height: 380px;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+}
+
+.contents{
+    background-color: #a4c6de;
+    margin: 6%;
+    margin-right: 0px;
+    border-radius: 10px;
+    float: left;
+    width: 370px;
+    height: 270px;
+    text-align: center;
+}
+
+.login_content{
+    margin-top: 8%;
+    margin-left: 10%;
+    font-weight: bold;
+    width: 80%;
+    height: 80%;
+}
+
+.title, #title {
+    margin-top: 10px;
+    width: 300px;
+    height: 80px;
+}
+
+.login {
+    margin-top: 30px;
+    width: 300px;
+    height: 80px;
+}
+
+.input {
+    width: 220px;
+    height: 80px;
+    float: left;
+}
+
+#user_email, #user_password {
+    margin-left: 5px;
+    width: 210px;
+    height: 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+#login {
+    font-weight: bold;
+    margin-right: 5px;
+    width: 60px;
+    height: 70px;
+    border: none;
+    border-radius: 10px;
+    background: cornsilk;
+    float: right;
+}
+
+#social_login_text {
+    text-align: center;
+    position: relative;
+    font-size: 0.8em;
+    color: #968d8d;
+    margin-top: 30px;
+}
+
+#underline {
+    background-color: #968d8d;
+    width: 191px;
+    height: 1px;
+    margin-top: -3px;
+    border: none;
+}
+
+#google_login {
+    background: transparent;
+    background-image: url("./img/btn_google_signin.png");
+    border: none;
+    width: 200px;
+    height: 40px;
+    background-size : contain;
+}
+
+#naver_login {
+    background: transparent;
+    background-image: url("./img/btn_naver_signin.png");
+    border: none;
+    width: 200px;
+    height: 40px;
+    background-size : contain;
+}
+
+#kakao_login {
+    background: transparent;
+    background-image: url("./img/btn_kakao_signin.png");
+    border: none;
+    width: 200px;
+    height: 40px;
+    background-size : contain;
+}
+
+#goto_signin{
+    font-weight: bold;
+    margin-top: 20px;
+    margin-right: 5px;
+    width: 130px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background: #c8dfe9;
+}
+
+.category{
+    width: 15%;
+    height: 55%;
+    float: left;
+    margin-top: 8%;
+    margin-left: 0px;
+    text-align: center;
+    display: table-cell;
+}
+
+.category_item {
+    background-color: #6c91ac;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 30%; width: 100%;
+    text-align: left;
+    margin: 10px;
+    margin-left: 0px;
+    box-sizing: border-box;
+}
+
+#sign_in_category, #find_user_category, #social_login_category{
+    border: none;
+    font-weight: bold;
+    background: transparent;
+    margin-top: 15px; margin-bottom: 15px;
+    margin-left: 1px; margin-right: 3px;
+}
+
+#comfirm {
+    margin-right: 15px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background: #B3A4C1;
+    float: right;
+}
