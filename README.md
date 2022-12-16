@@ -1,11 +1,14 @@
-#	:notebook_with_decorative_cover: SmileDiary
-*(실제 프로젝트 레퍼지토리는 보안 파일이 포함되어 있어 공개할 수 없습니다.)*
-<div>
+<div align="center">
+  <h1>	:notebook_with_decorative_cover: SmileDiary </h1>
   <h3>
     <a href="https://sshinmj.notion.site/SmileDiary-eaff14b9646a4b848bb66c9932e3d53b">
       📖 Wiki
     </a>
   </h3>
+  <p>
+    <I>(실제 프로젝트 레퍼지토리는 보안 파일이 포함되어 있어 공개할 수 없습니다.)</I><br>
+    <I>(본 저장소에 저장된 'SmileDiary' 폴더를 확인해 주세요.)</I>
+  </p>
 </div>
 
 <br>
